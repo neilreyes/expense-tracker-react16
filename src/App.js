@@ -1,27 +1,25 @@
-import React, { useState } from "react";
+import React from "react";
 import "./App.css";
-
-import Header from "./components/Header";
-import Balance from './components/Balance';
-import IncomeExpense from './components/IncomeExpense';
-import TransactionList from './components/TransactionList';
-import AddTransactionForm from './components/AddTransactionForm';
-
+import Header from './comps/Header';
+import Balance from './comps/Balance';
+import IncomeExpense from './comps/IncomeExpense';
+import TransactionList from './comps/TransactionList';
+import TransactionForm from './comps/TransactionForm';
 import { GlobalProvider } from './context/GlobalState';
 
 function App() {
     return (
-		<>
-			<GlobalProvider>
-				<Header />
-				<div className='container'>
-					<Balance />
-					<IncomeExpense />
-					<TransactionList />
-					<AddTransactionForm />
-				</div>
-			</GlobalProvider> 
-		</>
+        <>
+            <GlobalProvider>
+                <Header />
+                <div className='container'>
+                    <Balance />
+                    <IncomeExpense />
+                    <TransactionList />
+                    <TransactionForm />
+                </div>
+            </GlobalProvider>
+        </>
     );
 }
 
