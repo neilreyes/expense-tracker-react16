@@ -1,5 +1,6 @@
 import React, { useContext } from 'react'
-import { GlobalContext } from "../context/GlobalState";
+import { GlobalContext } from "../context/GlobalState"
+import numberFormat from '../utils/numberFormat'
 
 const IncomeExpense = () => {
 	const {transactions} = useContext(GlobalContext)
@@ -21,13 +22,13 @@ const IncomeExpense = () => {
             <div>
                 <h4>Income</h4>
                 <p id='money-plus' className='money plus'>
-                    ${incomeTotal}
+                    ₱{numberFormat(incomeTotal)}
                 </p>
             </div>
             <div>
                 <h4>Expense</h4>
                 <p id='money-minus' className='money minus'>
-                    ${Math.abs(expensesTotal)}
+                    ₱{numberFormat(Math.abs(expensesTotal))}
                 </p>
             </div>
         </div>

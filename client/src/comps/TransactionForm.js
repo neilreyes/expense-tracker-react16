@@ -6,7 +6,6 @@ const TransactionForm = () => {
 	const { addTransaction } = useContext(GlobalContext)
 
 	const [formData, setFormData] = useState({
-		id: '',
 		text: '',
 		amount: ''
 	})
@@ -19,10 +18,6 @@ const TransactionForm = () => {
 
 	const handleOnSubmit = e => {
 		e.preventDefault()
-		
-		formData.id = Math.floor(Math.random() * 1000000000)
-		formData.amount = parseFloat(formData.amount)
-		console.log(formData)
 		addTransaction(formData);
 		setFormData({text:'', amount: ''})
 	}
